@@ -1,0 +1,257 @@
+body{
+    background-color: black;
+    color: white;
+}
+  /*動かす前段階のアニメーション*/
+  section .inner div {
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: Drop;
+    animation-timing-function: linear;
+    opacity: 0;
+    transform-origin: 0px 0px;
+    height: 1vh;
+  }
+  
+  /*背景の設定*/
+  section#snow {
+    background: #142744;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #snow .inner {
+    height: 100%;
+    width: 100%;
+  }
+  /*雪の設定*/
+  #snow .inner div {
+    background: #fff;
+    border-radius: 4px;
+    display: block;
+    height: 1vh;
+    position: absolute;
+    width: 1vh;
+  }
+  
+  /*いくつかランダムに大きさを変える*/
+  #snow .inner div.snowflake1,
+  #snow .inner div.snowflake2,
+  #snow .inner div.snowflake5,
+  #snow .inner div.snowflake8 {
+    background-size: 2vh 1,5vh;
+  }
+  
+  /*雪をどの辺りに表示するか*/
+  .snowflake1 {
+    animation-duration: 4s;
+    left: 15%;
+  }
+  
+  .snowflake2 {
+    animation-delay: 0.3s;
+    animation-duration: 5s;
+    left: 19%;
+  }
+  
+  .snowflake3 {
+    animation-delay: 0.5s;
+    animation-duration: 5.5s;
+    left: 28%;
+  }
+  
+  .snowflake4 {
+    animation-delay: 0s;
+    animation-duration: 6s;
+    left: 38%;
+  }
+  
+  .snowflake5 {
+    animation-delay: 1s;
+    animation-duration: 2.6s;
+    left: 50%;
+  }
+  
+  .snowflake6 {
+    animation-delay: 1.2s;
+    animation-duration: 7s;
+    left: 60%;
+  }
+  
+  .snowflake7 {
+    animation-delay: 1.2s;
+    animation-duration: 8s;
+    left: 70%;
+  }
+  
+  .snowflake8 {
+    animation-delay: 1.4s;
+    animation-duration: 2.9s;
+    left: 85%;
+  }
+  
+  /*アニメーションの設定*/
+  @keyframes Drop {
+    0% {
+      opacity: 0.5;
+      transform: translate(400%, -10vh);
+    }
+    25%{
+      opacity: 1;
+
+    }
+    50% {
+      opacity: 1;
+      transform: translate(200%,50vh);
+    }
+    75%{
+      opacity: 0.65;
+      transform: translate(500%,75vh);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(250%,100vh);
+    }
+  }
+  
+
+@keyframes slide{
+  
+  50%{
+    opacity: 0.8;
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0,0);
+    background-color: red;
+    width: 600px;
+  }
+}
+
+
+.box{
+  width: 100px;
+  height: 100px;
+  margin:2% auto;
+  background-color: blue;
+  opacity: 0;
+}
+
+.box2{
+  width: 150px;
+  height: 150px;
+  margin:5% auto;
+  background-color: red;
+}
+
+.box3{
+  width: 150px;
+  height: 150px;
+  margin:5% auto;
+  background-color: black;
+}
+
+
+@keyframes fadeOut{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+.snow, .snow2, .snow3 {
+  color: snow; /*雪の色*/
+  font-size: 8px; /*雪の大きさ*/
+  position: absolute;
+  top: -5%; /*初期位置*/
+  text-shadow:
+  5vw   -90px 2px,
+  12vw  -380px 3px,
+  24vw  -500px 4px,
+  30vw  -580px 1px,
+  39vw  -250px 2px,
+  42vw  -340px 5px,
+  56vw  -150px 2px,
+  63vw  -180px 0,
+  78vw  -100px 4px,
+  46vw  -530px 9px,
+  94vw  -170px 7px;
+}
+.snow2{
+  text-shadow:
+  2vw   -200px 2px,
+  15vw  -580px 3px,
+  23vw  -300px 4px,
+  35vw  -780px 1px,
+  43vw  -150px 2px,
+  56vw  -540px 5px,
+  59vw  -350px 2px,
+  67vw  -580px 0,
+  58vw  -620px 4px,
+  83vw  -220px 9px,
+  97vw  -370px 7px;
+} 
+.snow{
+    animation: anim 25s linear 0s infinite;
+}
+.snow2{
+    animation: anim 25s linear 3s infinite;
+}
+.snow3{
+    animation: anim 25s linear 6s infinite;
+}
+
+@keyframes anim {
+    0%{
+        top:1%;
+        transform:translateX(20px);
+    }
+    10%{
+        transform:translateX(-20px);
+    }
+    20%{
+        transform:translateX(20px);
+    }
+    30%{
+        transform:translateX(-20px);
+    }
+    40%{
+        transform:translateX(20px);
+    }
+    50%{
+        transform:translateX(-20px);
+    }
+    60%{
+        transform:translateX(20px);
+    }
+    70%{
+        transform:translateX(-20px);
+    }
+    80%{
+        transform:translateX(20px);
+    }
+    90%{
+        transform:translateX(-20px);
+    }
+    100% {
+    color: transparent;
+    top: 100%;
+
+  }
+}
